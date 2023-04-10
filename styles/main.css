@@ -1,0 +1,527 @@
+.filterContainer{
+  display:grid;
+  grid-template-columns: auto 60px;
+  width:100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin-left:10px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+#clear-filter{
+  background-color:#969696;
+  color:black;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* width */
+::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  display: none;
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  display: none;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  display: none;
+  background: #555;
+}
+
+body {
+  display:grid;
+  position: absolute;
+  inset: 0;
+  place-content: center;
+  align-items: center;
+  overflow: hidden;
+  display: grid;
+  font-family: rubik;
+  color: rgb(255, 230, 0);
+  grid-template-columns: 300px calc(100% - 300px);
+  grid-template-rows: 100%;
+  margin: 0 auto;
+  padding: 0;
+  align-items: self-start;
+
+}
+
+/* This is just to transition when you change the viewport size. */
+* {
+  transition: all 0.25s ease-out;
+}
+
+
+h1 {
+  margin: 10px 20px;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: 3px;
+}
+
+
+
+
+.reset-image {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+
+
+.card {
+  width: 20%;
+  box-sizing: border-box;
+  list-style: none;
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: inset 0px 0px 29px 8px black;
+  border: 4px solid #222;
+  color: #222;
+  text-align: center;
+  border-radius: 20px;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  align-items: center;
+  background-size: 60px 60px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  transition: all 0.4s;
+  cursor: pointer;
+  margin: 10px;
+  padding-top:5px;
+  height:20%;
+  margin-bottom:30px;
+}
+
+.card-image {
+  max-width: 90%;
+  height: 100%;
+  filter: drop-shadow(2px 2px 5px black);
+  margin: 20px auto;
+  transition: all 0.3s;
+  margin-top: 40px;
+}
+
+#poke-detail-name {
+  color: #333;
+  font-size: 20px;
+  background-color: white;
+  align-self: flex-start;
+  border-radius: 5px;
+  border-bottom-right-radius: 35px;
+  border-top-left-radius: 25px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  overflow: visible;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin: 10px;
+  height: 35px;
+  line-height: 35px;
+  align-content: center;
+}
+
+#poke-detail-number {
+  display: inline-block;
+  height: 25px;
+  background: yellow;
+  color: black;
+  line-height: 25px;
+  border-radius: 10px;
+  border: 2px solid black;
+  text-align: center;
+  position: relative;
+  right: 0px;
+  top:20px;
+  max-width: 60px;
+}
+
+.detail-header {
+  height:20px;
+  display: block;
+  background-color: rgba(0 ,0 ,0,0.4);
+  box-shadow: inset 0px 0px 10px 4px #000000ed;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff700;
+  letter-spacing: 1px;
+  font-weight: 300;
+  padding: 2px 10px;
+  margin: 10px 20px;
+  margin-bottom: 0;
+  border: 2px solid #030406;
+}
+
+.poke-detail-entry {
+  display: grid;
+  padding: 2px;
+  padding-left: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  color: #333;
+  /* max-width: 90px; */
+  margin: 0 25px;
+  border: 2px solid black;
+  border-top: 0;
+}
+
+#details-right-column {
+  display: grid;
+  grid-template-rows: 200px 30px 50px;
+}
+
+#poke-detail-image {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  margin: 20px auto;
+}
+
+#details-right-data {
+  position: sticky;
+  top: 200px;
+}
+
+#poke-detail-base-exp {
+  display: grid;
+  text-align: center;
+  color: white;
+  background-color: black;
+  max-width: 100%;
+  margin: 0 20px;
+  /* margin-left: 30%; */
+  height: 30px;
+  line-height: 30px;
+  /* border-radius: 7px; */
+  border: 2px solid black;
+}
+
+#poke-detail-stats-container {
+  display: grid;
+  grid-template-columns: auto;
+  margin: 0 20px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 29px 8px black;
+}
+
+.poke-detail-stat-entry {
+  display: grid;
+  grid-template-columns: auto 50px;
+  background-color: white;
+  border-bottom: 2px solid #1b1b1b;
+}
+
+.poke-stat {
+  font-size: 15px;
+  display: grid;
+  text-align: center;
+  color: #222;
+  margin: 0;
+  padding: 3px 5px;
+  
+}
+
+.stats-header {
+  overflow-wrap: break-word;
+  font-size: 14px;
+  background: rgb(39, 37, 37);
+  color: #ffffff;
+  margin-top: 0;
+  padding: 3px 5px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.poke-name {
+  font-size: 0.8rem;
+  padding:5px;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  background: white;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 52%, rgba(136, 136, 136, 1) 100%);
+  border-bottom: 3px solid #030406;
+  margin:0;
+}
+
+.poke-number {
+
+  background-color: #222;
+  border-radius: 5px;
+  color: whitesmoke;
+  font-size: 0.6rem;
+  margin-top: 42px;
+  width: 28px;
+  margin: 0 auto;
+  /* margin-bottom: 10px; */
+  padding: 3px 10px;
+  margin-top: 45px;
+
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: normal;
+  margin-bottom: 0;
+
+}
+
+.card-subtitle {
+  font-weight: lighter;
+  color: #666;
+  margin-top: 5px;
+}
+
+.card:hover {
+  background-color: rgb(87, 206, 236);
+  /* // animation: bounce 0.5s linear; */
+}
+
+#search-box {
+  display: grid;
+  grid-template-columns: 100%;
+  height: 100%;
+
+}
+.poke-button
+{
+  background-color: #2583ff;
+  color: white;
+  font-family: rubik;
+  box-shadow: inset 0px 0px 1px 2px black;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.3rem;
+  font-weight:600;
+  letter-spacing: 2px;
+  border: 2px solid  rgb(255, 230, 0);
+}
+
+.poke-button:hover {
+  background-color:  rgb(255, 230, 0);
+  color: #333;
+}
+
+.filter-button {
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+
+.filterTitle{
+  color:white;
+  font-size: 18px;
+  font-weight:500;
+  letter-spacing: 3px;
+  display: inline-block;
+}
+
+.filter-input {
+  width: 80%;
+  font-size: 1.2rem;
+  text-transform:uppercase;
+  padding: 5px 8px;
+  line-height: 30px;
+  height: 40px;
+  border-radius:15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #cccccc;
+}
+.filter-input:hover {
+  border: 2px solid  rgb(255, 230, 0);
+  background-color: white;
+}
+
+
+
+.filter-field {
+  display: grid;
+  margin-top: 20px;
+}
+
+#controls {
+  margin: 20px;
+  height: 115px;
+}
+
+#controls>div {
+  position: relative;
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  z-index: 444;
+  margin-bottom: -28px;
+  box-shadow: 0px 0px 1px 5px #000000a4;
+}
+
+#controls>div:first-child {
+  z-index: 444;
+  transform: rotate(90deg);
+  margin-top: 50px;
+
+}
+
+#buttons {
+  height: 100%;
+}
+
+#searchBox{
+  box-sizing: border-box;
+  background-color: #1b1b1b;
+  padding: 10px;
+  background-color: #470c0c;
+  padding: 25px;
+  box-shadow: inset 0px 0px 20px 5px #000000ed;
+  display: grid;
+  font-size: 2rem;
+  border-top-right-radius: 50px;
+}
+
+.filter:hover {
+  border: 2px solid  rgb(255, 230, 0)
+}
+#filter-help{
+
+  color:white;
+  font-size:1.3rem;
+}
+@keyframes bounce {
+  20% {
+    transform: translateY(-6px);
+  }
+
+  40% {
+    transform: translateY(0px);
+  }
+
+  60% {
+    transform: translateY(-2px);
+  }
+
+  80% {
+    transform: translateY(-0px);
+  }
+}
+
+@media(max-width: 550px) {
+
+  .filter-button{
+    width:100%;
+    padding:5px;
+  }
+.card-image{
+  height: 80px;
+}
+.poke-name{
+  font-size:0.5rem;
+}
+
+  .detail-header {
+    margin: 0 5px;
+  }
+
+  .poke-detail-entry {
+    margin: 0 5px;
+    font-size:12px;
+  }
+
+  #poke-detail-image{
+    width: 140px;
+    height: 140px;
+
+  }
+  #poke-detail-stats-container{
+    margin: 0 10px;
+  }
+  h1{
+    font-size:1.5rem;
+  }
+  h3{
+    font-size:1rem;
+  }
+}
+
