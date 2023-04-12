@@ -9,11 +9,14 @@ export function printRecoveredPokemonData(mappedData, habitatsData, cardsContain
 
   pokemonMapped = mappedData
   habitats = habitatsData
-  mappedData.forEach((element) => {
+  for (let index = 0; index < pokemonMapped.length; index++) {
+    const element = pokemonMapped[index];
     pokeCards.push(renderPokemon(element, cardsContainerId, onCardClickFunction));
-  })
-
-  disableLoadingElements()
+    if(index == 10){
+      disableLoadingElements()
+    }
+    
+  }
 }
 
 export function clearTypeFilter() {
