@@ -16,7 +16,6 @@ export async function createFilterArea(parentContainer)
     const typesDropdown = createDropdownFilterById(filtersContainer, "type-filter","PokeType")
     const habitatDropdown = createDropdownFilterById(filtersContainer, "habitat-filter","PokeHabitat")
     
-
     const selectedFilters =document.createElement("p")
     selectedFilters.setAttribute("id", "filter-selection")
     

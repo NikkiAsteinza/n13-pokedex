@@ -1,4 +1,3 @@
-
 export function renderPokemon(
   pokeData,pokeCardsContainer,onCardClickFunction) {
   const pokeContainer = createPokeCard(
@@ -16,7 +15,6 @@ function createPokeCard(pokeData,onCardClickFunction) {
   pokeCardContainer.setAttribute("id", pokeData.number);
   pokeCardContainer.setAttribute("poke-name", pokeData.name);
   pokeCardContainer.classList.add("card");
-
 
   let pokeNumber = document.createElement("p");
   pokeNumber.innerText = `${pokeData.number}`;

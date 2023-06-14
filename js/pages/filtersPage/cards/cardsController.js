@@ -6,17 +6,14 @@ let pokemonMapped
 let habitats
 
 export function printRecoveredPokemonData(mappedData, habitatsData, cardsContainerId, onCardClickFunction) {
-
   pokemonMapped = mappedData
   habitats = habitatsData
   for (let index = 0; index < pokemonMapped.length; index++) {
     const element = pokemonMapped[index];
     pokeCards.push(renderPokemon(element, cardsContainerId, onCardClickFunction));
-    if(index == 10){
-      disableLoadingElements()
-    }
     
   }
+  disableLoadingElements();
 }
 
 export function clearTypeFilter() {
@@ -25,6 +22,8 @@ export function clearTypeFilter() {
   })
 }
 
+
+// TODO: COMPLEX FILTERS
 export function showCardsByFilter(filters) {
   const filtersList = []
   filters.forEach((filter) => {

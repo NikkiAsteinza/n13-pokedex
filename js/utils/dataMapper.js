@@ -1,5 +1,4 @@
 import { print } from "./logger.js";
-
 print ("Thanks for visiting N13-Pokedex")
 export async function getPokeDataFromFetch(pokeApiUrl,numberOfPokemonToShow) {
     let getPokemonResult = await getBuiltPokemonData(
