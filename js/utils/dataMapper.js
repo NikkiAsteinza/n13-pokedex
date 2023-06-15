@@ -82,4 +82,3 @@ export async function getPokeDataFromFetch(pokeApiUrl,numberOfPokemonToShow) {
   
     return pokemonMap;
   }
-  
