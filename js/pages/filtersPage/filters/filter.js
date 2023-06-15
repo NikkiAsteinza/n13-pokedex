@@ -8,7 +8,6 @@ export default class Filter{
     }
     getInputValue(){
         const inputElemen = document.getElementById(this.inputElement);
-        console.log(inputElemen.value)
         return inputElemen.value
     }
     getIsEnabled(){

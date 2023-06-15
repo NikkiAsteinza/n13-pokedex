@@ -39,7 +39,7 @@ export async function initPokedex(pokeApiUrl,numberOfPokemonToShow,pokeApiHabita
     pokedexPages.push(filtersPage)
     currentPage = 0
     const mappedData = await getPokeDataFromFetch(pokeApiUrl,numberOfPokemonToShow)
-    disableLoadingElements();
+    restoreBackground();
     const recoveredMappedHabitatsData = await getHabitatDataFromFetch(pokeApiHabitats)
     setPokemonsMapped(mappedData);
     setHabitatsMapped(recoveredMappedHabitatsData)
@@ -51,8 +51,11 @@ export async function initPokedex(pokeApiUrl,numberOfPokemonToShow,pokeApiHabita
     pokedexPages.push(detailPage)
 }
 
-function disableLoadingElements(){
+export function restoreBackground(){
     SCREEN_CONTAINER_ID.style.backgroundImage = "url('resources/background-4.gif')";
+}
+export function setNotFound(){
+    SCREEN_CONTAINER_ID.style.backgroundImage = "url('resources/not-found.png')";
 }
 
 export function goToDetailsPage(pokeNumber){

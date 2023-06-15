@@ -1,6 +1,6 @@
 import {
   showCardsByFilter as showCardsByFilters,
-  clearTypeFilter,
+  clearFilter,
 } from "../cards/cardsController.js";
 
 import Filter from "./filter.js"
@@ -21,7 +21,7 @@ function applySelectedFilters() {
 }
 
 export function clearTextFilter() {
-  clearTypeFilter();
+  clearFilter();
   const applyButton = document.getElementById("apply-filter");
   applyButton.classList.remove("hidden")
   const clearFilterButton = document.getElementById("clear-filter");

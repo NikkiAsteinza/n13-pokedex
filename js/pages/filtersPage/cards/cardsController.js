@@ -1,3 +1,4 @@
+import { restoreBackground, setNotFound } from "../../../pokedexController.js";
 import { renderPokemon } from "./cardCreator.js";
 
 let pokeCards = [];
@@ -18,13 +19,13 @@ export function printRecoveredPokemonData(
       renderPokemon(element, cardsContainerId, onCardClickFunction)
     );
   }
-
 }
 
-export function clearTypeFilter() {
+export function clearFilter() {
   pokeCards.forEach((card) => {
     card.classList.remove("hidden");
   });
+  restoreBackground();
 }
 
 export function showCardsByFilter(filters) {
@@ -61,32 +62,11 @@ export function showCardsByFilter(filters) {
   pokemonToHide.forEach((pokemon) => {
     document.getElementById(pokemon.number).classList.add("hidden");
   });
-}
 
-export function showFilterCardByName(name) {
-  const targetId = pokemonMapped.filter((e) => e.name == name.toLowerCase());
-  console.log(targetId[0]);
-  document.getElementById(targetId[0].number)?.click();
-}
-
-export function showFilterCardByType(type) {
-  console.log("type: " + type);
-  const pokemonToHide = pokemonMapped.filter(
-    (x) => containsDesiredType(x, type) !== true
-  );
-  pokemonToHide.forEach((pokemon) => {
-    document.getElementById(pokemon.number).classList.add("hidden");
-  });
-}
-
-export function showFilterByCardHabitat(habitat) {
-  console.log("habitat: " + habitat);
-  const pokemonToHide = pokemonMapped.filter(
-    (x) => containsDesiredHabitat(x, habitat) !== true
-  );
-  pokemonToHide.forEach((pokemon) => {
-    document.getElementById(pokemon.number).classList.add("hidden");
-  });
+  if(pokemonToHide.length == pokemonMapped.length){
+      console.log("not found")
+      setNotFound();
+  }
 }
 
 function containsDesiredType(x, requiredType) {
