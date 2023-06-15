@@ -6,15 +6,15 @@ export async function createFilterArea(parentContainer)
     filtersContainer.setAttribute("id", "searchBox");
     
     const filterAreaTitle = document.createElement("h3")
-    filterAreaTitle.innerText ="PokeFilters"
+    filterAreaTitle.innerText ="Filters"
     
     parentContainer.append(filterAreaTitle)
     
-    createFilterById(filtersContainer, "filter-id","PokeNumber");
-    createFilterById(filtersContainer, "filter-name","PokeName");
+    createFilterById(filtersContainer, "filter-id","Number");
+    createFilterById(filtersContainer, "filter-name","Name");
     
-    const typesDropdown = createDropdownFilterById(filtersContainer, "type-filter","PokeType")
-    const habitatDropdown = createDropdownFilterById(filtersContainer, "habitat-filter","PokeHabitat")
+    const typesDropdown = createDropdownFilterById(filtersContainer, "type-filter","Type")
+    const habitatDropdown = createDropdownFilterById(filtersContainer, "habitat-filter","Habitat")
     
     const selectedFilters =document.createElement("p")
     selectedFilters.setAttribute("id", "filter-selection")

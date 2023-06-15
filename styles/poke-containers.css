@@ -180,17 +180,19 @@ html {
     #buttons{
         position: fixed;
         z-index: 9999;
-        width: 80%;
-        height: 200px;
+        width: 84%;
+        height: calc(100% - 237px);
         top: 96px;
         padding-bottom: 80px;
-        left: 10%;
+        left: 7%;
         display: none;
         font-size: 1rem;
-        background-color: #101010;
+        background-color: #397aa3de;
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
-        padding-top:10px;
+        padding-top: 10px;
+        border-bottom-left-radius: 98px;
+        border-bottom-right-radius: 32px;
     }
     .card{
         width: 26%;
