@@ -1,4 +1,3 @@
-import { disableLoadingElements } from "../../../pokedexController.js";
 import { renderPokemon } from "./cardCreator.js";
 
 let pokeCards = [];
@@ -19,7 +18,7 @@ export function printRecoveredPokemonData(
       renderPokemon(element, cardsContainerId, onCardClickFunction)
     );
   }
-  disableLoadingElements();
+
 }
 
 export function clearTypeFilter() {
