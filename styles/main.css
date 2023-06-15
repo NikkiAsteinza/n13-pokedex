@@ -459,6 +459,7 @@ h1 {
   display: grid;
   font-size: 2rem;
   border-top-right-radius: 50px;
+  margin-top:30px;
 }
 
 .filter:hover {
