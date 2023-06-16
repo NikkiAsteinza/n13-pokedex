@@ -162,14 +162,24 @@ html {
 .bottom-button{
     position: fixed;
     bottom: 23px;
-    left: 18px;
+    left: 9px;
     width: 40px;
     height: 40px;
     border-radius: 51%;
     font-size: 1rem;
 }
-
+@media(max-width: 780px) {
+    .card{
+        width: 38%;
+    }
+}
 @media(max-width: 550px) {
+    .filterContainer{
+        padding: 3px 20px;
+    }
+    .filter-input{
+        padding: 3px 20px;
+    }
     body{
         grid-template-columns: 100%;
         grid-template-rows: 100%;
@@ -180,23 +190,24 @@ html {
     #buttons{
         position: fixed;
         z-index: 9999;
-        width: 84%;
-        height: calc(100% - 237px);
+        width: 80%;
+        height: calc(100% - 231px);
         top: 96px;
         padding-bottom: 80px;
-        left: 7%;
+        left: 9%;
         display: none;
         font-size: 1rem;
         background-color: #397aa3de;
-        border-top-right-radius: 25px;
+        border-top-right-radius: 29px;
         border-top-left-radius: 25px;
         padding-top: 10px;
-        border-bottom-left-radius: 98px;
+        border-bottom-left-radius: 118px;
         border-bottom-right-radius: 32px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
     }
-    .card{
-        width: 26%;
-    }
+
     .filter{
         height:30px;
     }
@@ -209,21 +220,6 @@ html {
     #top {
         padding: 10px;
         grid-template-columns: 120px auto;
-    }
-
-    .lights {
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        display: inline-block;
-        border: 2px solid white;
-        filter: drop-shadow(0 0 5px white);
-    }
-
-    #first-light {
-        width: 30px;
-        height: 30px;
-
     }
 
     #poke-detail-name {
@@ -240,16 +236,3 @@ html {
         padding: 0 5px;
     }
 }
-
-/* @media(max-height: 780px) {
-
-    #screen-container {
-        height: 67vh;
-    }
-} */
-
-/* @media(max-width: 280px) and (min-height: 650px) {
-    #screen-container {
-        height: 649px;
-    }
-} */

@@ -6,6 +6,7 @@ export async function createFilterArea(parentContainer)
     filtersContainer.setAttribute("id", "searchBox");
     
     const filterAreaTitle = document.createElement("h3")
+    filterAreaTitle.classList.add("filters-header");
     filterAreaTitle.innerText ="Filters"
     
     parentContainer.append(filterAreaTitle)
@@ -13,20 +14,15 @@ export async function createFilterArea(parentContainer)
     createFilterById(filtersContainer, "filter-id","Number");
     createFilterById(filtersContainer, "filter-name","Name");
     
-    const typesDropdown = createDropdownFilterById(filtersContainer, "type-filter","Type")
-    const habitatDropdown = createDropdownFilterById(filtersContainer, "habitat-filter","Habitat")
-    
-    const selectedFilters =document.createElement("p")
-    selectedFilters.setAttribute("id", "filter-selection")
-    
-    filtersContainer.append(selectedFilters)
+    const typesDropdown = createDropdownFilterById(filtersContainer, "type-filter","Type");
+    const habitatDropdown = createDropdownFilterById(filtersContainer, "habitat-filter","Habitat");
 
-    const clearFilterButton = document.createElement("button")
-    clearFilterButton.setAttribute("id", "clear-filter")
-    clearFilterButton.classList.add("poke-button")
-    clearFilterButton.classList.add("filter-button")
-    clearFilterButton.classList.add("hidden")
-    clearFilterButton.innerHTML ="Clear"
+    const clearFilterButton = document.createElement("button");
+    clearFilterButton.setAttribute("id", "clear-filter");
+    clearFilterButton.classList.add("poke-button");
+    clearFilterButton.classList.add("filter-button");
+    clearFilterButton.classList.add("hidden");
+    clearFilterButton.innerHTML ="Clear";
 
     const applyFilterButton = document.createElement("button")
     applyFilterButton.setAttribute("id", "apply-filter")

@@ -1,9 +1,14 @@
 .filterContainer{
-  display:grid;
+  display: grid;
   grid-template-columns: auto 60px;
-  width:100%;
+  width: 100%;
   box-sizing: border-box;
   align-items: center;
+  background-color: #470c0c;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 8px 8px #000000ed;
+  margin-top:20px;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -66,11 +71,14 @@ input:checked + .slider:before {
 
 /* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 5px;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius: 5px;
+}
+.slider:hover:before {
+  background-color: yellow;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -106,7 +114,7 @@ body {
   display: grid;
   font-family: rubik;
   color: rgb(255, 230, 0);
-  grid-template-columns: 180px calc(100% - 180px);
+  grid-template-columns: 200px calc(100% - 200px);
   grid-template-rows: 100%;
   margin: 0 auto;
   padding: 0;
@@ -321,6 +329,7 @@ h1 {
   background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 52%, rgba(136, 136, 136, 1) 100%);
   border-bottom: 3px solid #030406;
   margin:0;
+  margin-top: 6px;
 }
 
 .poke-number {
@@ -365,8 +374,6 @@ h1 {
 }
 .poke-button
 {
-  background-color: #2583ff;
-  color: white;
   font-family: rubik;
   box-shadow: inset 0px 0px 1px 2px black;
   cursor: pointer;
@@ -387,9 +394,20 @@ h1 {
   letter-spacing: 2px;
   width: 100%;
   border-radius: 10px;
+  margin-top:30px;
 }
 
-
+.filters-header{
+  background-color: #470c0c;
+  padding: 18px;
+  border-radius: 30px;
+  border-top-left-radius: 50px;
+  box-shadow: inset 0px 0px 8px 8px #000000ed;
+  border-bottom-right-radius: 143px;
+  margin-bottom: 0;
+  font-size:1.5rem;
+  text-transform: uppercase;
+}
 
 .filterTitle{
   color:white;
@@ -402,13 +420,12 @@ h1 {
 .filter-input {
   width: 100%;
   font-size: 1.2rem;
-  text-transform:uppercase;
+  text-transform: uppercase;
   padding: 5px 8px;
   line-height: 30px;
   height: 40px;
-  border-radius:15px;
+  border-radius: 10px;
   box-sizing: border-box;
-  margin: 10px auto;
   background-color: #cccccc;
 }
 .filter-input:hover {
@@ -451,7 +468,6 @@ h1 {
 
 #searchBox{
   box-sizing: border-box;
-  padding: 5px;
   display: grid;
   font-size: 2rem;
   margin-top:30px;
@@ -482,12 +498,33 @@ h1 {
     transform: translateY(-0px);
   }
 }
-
+@media(width < 860px){
+  .card{
+    width:25%;
+  }
+}
 @media(max-width: 550px) {
-
+  #searchBox{
+    margin-top:0;
+  }
+.filters-header{
+  position: fixed;
+  top: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #1b1b1bdf;
+  margin-top: 22px;
+  font-size: 1.2rem;
+}
   .filter-button{
-    width:100%;
-    padding:5px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    position: fixed;
+    bottom: 50px;
+    left: calc(100% - 89px);
+    border-radius: 50%;
+    font-size:0.7rem;
   }
 .card-image{
   height: 80px;
