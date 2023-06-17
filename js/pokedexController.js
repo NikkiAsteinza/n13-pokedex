@@ -55,7 +55,7 @@ export function restoreBackground(){
     SCREEN_CONTAINER_ID.style.backgroundImage = "url('resources/background-4.gif')";
 }
 export function setNotFound(){
-    SCREEN_CONTAINER_ID.style.backgroundImage = "url('resources/not-found.png')";
+    SCREEN_CONTAINER_ID.style.backgroundImage = "url('resources/404-armadilllo.gif')";
 }
 
 export function goToDetailsPage(pokeNumber){
