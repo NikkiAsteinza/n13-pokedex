@@ -1,16 +1,20 @@
-export function renderPokemon(
-  pokeData,pokeCardsContainer,onCardClickFunction) {
-  const pokeContainer = createPokeCard(
-    pokeData,
-    onCardClickFunction)
+export function renderPokemon(pokeData, pokeCardsContainer, onCardClickFunction) {
+  // Check if the card already exists
+  const existingCard = document.getElementById(pokeData.number);
+  if (existingCard) {
+    // If the card already exists, return it
+    return existingCard;
+  }
 
-  const container = document.getElementById(pokeCardsContainer)
+  // Create a new card and append it if it doesn't exist
+  const pokeContainer = createPokeCard(pokeData, onCardClickFunction);
+  const container = document.getElementById(pokeCardsContainer);
   container.append(pokeContainer);
+
   return pokeContainer;
 }
 
-function createPokeCard(pokeData,onCardClickFunction) {
-
+function createPokeCard(pokeData, onCardClickFunction) {
   let pokeCardContainer = document.createElement("div");
   pokeCardContainer.setAttribute("id", pokeData.number);
   pokeCardContainer.setAttribute("poke-name", pokeData.name);
@@ -21,7 +25,7 @@ function createPokeCard(pokeData,onCardClickFunction) {
   pokeNumber.classList.add("poke-number");
 
   let space = document.createElement("img");
-  space.srcset = `${pokeData.image}`;
+  space.src = `${pokeData.image}`; // Use 'src' instead of 'srcset' for a single image
   space.classList.add("card-image");
 
   let pokeName = document.createElement("h4");
@@ -34,8 +38,8 @@ function createPokeCard(pokeData,onCardClickFunction) {
   pokeCardContainer.append(pokeName, space, pokeNumber);
 
   pokeCardContainer.addEventListener("click", () => {
-    onCardClickFunction(pokeData.number)
-  })
-  
-  return pokeCardContainer
+    onCardClickFunction(pokeData.number);
+  });
+
+  return pokeCardContainer;
 }

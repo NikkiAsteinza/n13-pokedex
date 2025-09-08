@@ -114,8 +114,11 @@ function createDataDropdown(recievedData, targetDropdown) {
       const element = recievedData.results[index];
       data.push(element);
       const option = document.createElement("option");
-      option.innerHTML = element.name;
-      targetDropdown.append(option);
+      if(element){
+        option.innerHTML = element.name;
+        targetDropdown.append(option);
+      }
+
     }
 }
 
